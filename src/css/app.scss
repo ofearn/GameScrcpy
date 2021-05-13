@@ -1,0 +1,15 @@
+// app global css in SCSS form
+* {
+  user-select: none;
+}
+#q-app,
+body,
+html {
+  height: 100%;
+}
+#q-app {
+  display: flex;
+  background: #001529;
+  // background-image: linear-gradient(135deg, #21024f 10%, #390ddb 100%);
+  border-radius: 5px;
+}
