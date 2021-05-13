@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "bt"; /* Project id 2518804 */
+  src: url('iconfont.woff2?t=1620724847427') format('woff2'),
+       url('iconfont.woff?t=1620724847427') format('woff'),
+       url('iconfont.ttf?t=1620724847427') format('truetype');
+}
+
+.bt {
+  font-family: "bt" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bt-log:before {
+  content: "\e63d";
+}
+
+.bt-xiaomi:before {
+  content: "\e75d";
+}
+
+.bt-yijia:before {
+  content: "\e830";
+}
+
+.bt-huawei:before {
+  content: "\e644";
+}
+
+.bt-guanbi:before {
+  content: "\e600";
+}
+
+.bt-chuizi:before {
+  content: "\e673";
+}
+
+.bt-jiaoben:before {
+  content: "\e79c";
+}
+
+.bt-33beifen:before {
+  content: "\e753";
+}
+
+.bt-shouji:before {
+  content: "\e602";
+}
+
+.bt-shezhi:before {
+  content: "\e614";
+}
+
+.bt-zuixiaohua:before {
+  content: "\e680";
+}
+
