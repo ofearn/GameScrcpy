@@ -1,17 +1,19 @@
 import { execSync, spawn } from 'child_process'
 import process from 'process'
-import { join } from 'path'
-const decoder = new TextDecoder('gbk')
-export const exec = (cmd: string, formatPath: boolean = false) => {
-  if (formatPath) {
-    cmd = join(__dirname, cmd)
+
+export const exec = (cmd: string, format?: string) => {
+  const result = execSync(cmd)
+  if (!format) {
+    return result
   }
-  return decoder.decode(execSync(cmd))
+  try {
+    const decoder = new TextDecoder(format)
+    return decoder.decode(result)
+  } catch (_) {
+    return result
+  }
 }
-export const run = (path: string, args: string[], formatPath = false, callback: Function) => {
-  if (formatPath) {
-    path = join(__dirname, path)
-  }
+export const run = (path: string, args: string[], callback?: Function) => {
   const shell = spawn(path, args)
   shell.stdout.on('data', function (data) {
     callback && callback(1, data)
@@ -25,5 +27,5 @@ export const run = (path: string, args: string[], formatPath = false, callback: 
   return shell
 }
 export const kill = (pid: number) => {
-  return process.kill(pid, 'SIGTERM')
+  process.kill(pid, 'SIGTERM')
 }

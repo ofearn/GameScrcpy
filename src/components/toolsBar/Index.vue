@@ -18,12 +18,11 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'ToolsBar',
   setup() {
-    const xw = (window as any).xw
     const minimizeApp = () => {
-      xw.windows.minimize()
+      window.windows.minimize()
     }
     const closeApp = () => {
-      xw.windows.close()
+      window.windows.close()
     }
     return { minimizeApp, closeApp }
   },
@@ -52,6 +51,9 @@ export default defineComponent({
       cursor: pointer;
       &:hover {
         background: rgba($color: #fff, $alpha: 0.05);
+      }
+      &:active {
+        background: rgba($color: #fff, $alpha: 0);
       }
     }
   }

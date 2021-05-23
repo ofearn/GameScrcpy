@@ -9,8 +9,6 @@
 /* eslint-env node */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { configure } = require('quasar/wrappers')
-const fs = require('fs-extra')
-const path = require('path')
 
 module.exports = configure(function (ctx) {
   return {
@@ -207,7 +205,7 @@ module.exports = configure(function (ctx) {
         // https://www.electron.build/configuration/configuration
 
         appId: 'game-scrcpy',
-        extraResources: ['./lib'],
+        extraResources: ['./lib', './config', './theme'],
       },
       extendPackageJson(pkg) {
         // fs.copy(path.join(__dirname, 'lib'), path.join(__dirname, 'dist', 'electron', 'UnPackaged', 'lib'))
