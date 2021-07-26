@@ -160,7 +160,7 @@ func parserControlMessage(deviceName string, message []byte, conn *websocket.Con
 		kc := getJsonInt(message, 0, "keycode")
 		repeat := getJsonInt(message, 0, "repeat")
 		ms := getJsonInt(message, 0, "metaState")
-		bytes := keycode(at, kc,repeat,ms)
+		bytes := keycode(at, kc, repeat, ms)
 		cd.control.Write(bytes)
 	case TYPE_INJECT_TEXT:
 		t := getJsonString(message, "", "text")
